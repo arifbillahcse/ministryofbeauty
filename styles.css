@@ -6,21 +6,21 @@
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-  --gold:        #C9A96E;
-  --gold-light:  #E2C99A;
-  --gold-dark:   #A07840;
+  --gold:        #C17B8A;
+  --gold-light:  #DBA8B3;
+  --gold-dark:   #8A5460;
   --black:       #0A0A0A;
-  --dark:        #111111;
-  --dark-2:      #1A1A1A;
-  --dark-3:      #222222;
-  --cream:       #F8F4EE;
-  --cream-2:     #F0E8DC;
+  --dark:        #1A0D10;
+  --dark-2:      #231318;
+  --dark-3:      #2E1820;
+  --cream:       #FDF6F7;
+  --cream-2:     #F5E8EB;
   --white:       #FFFFFF;
   --grey:        #888888;
   --grey-light:  #CCCCCC;
-  --border:      rgba(201,169,110,0.2);
+  --border:      rgba(193,123,138,0.2);
   --border-dark: rgba(255,255,255,0.06);
-  --shadow-gold: 0 20px 60px rgba(201,169,110,0.15);
+  --shadow-gold: 0 20px 60px rgba(193,123,138,0.18);
   --shadow-dark: 0 20px 60px rgba(0,0,0,0.4);
   --radius:      16px;
   --radius-sm:   8px;
@@ -273,7 +273,7 @@ img { max-width: 100%; display: block; }
 
 .nav-logo {
   font-family: var(--font-serif);
-  font-size: 1.5rem;
+  font-size: 1.9rem;
   font-weight: 600;
   display: flex;
   gap: 0.3rem;
@@ -281,6 +281,8 @@ img { max-width: 100%; display: block; }
 }
 
 .logo-of { color: var(--gold); font-style: italic; }
+.logo-ministry, .logo-beauty { color: var(--dark); }
+.logo-beauty { color: var(--gold); }
 
 /* Logo image — navbar */
 .nav-logo-img {
@@ -305,7 +307,7 @@ img { max-width: 100%; display: block; }
 .nav-logo-fallback {
   display: none;
   font-family: var(--font-serif);
-  font-size: 1.5rem;
+  font-size: 1.9rem;
   font-weight: 600;
   gap: 0.3rem;
   color: var(--dark);
@@ -320,13 +322,13 @@ img { max-width: 100%; display: block; }
   display: block;
   margin-bottom: 1.2rem;
   /* invert to white so it shows on dark footer */
-  filter: brightness(0) invert(1) drop-shadow(0 2px 12px rgba(201,169,110,0.3));
+  filter: brightness(0) invert(1) drop-shadow(0 2px 12px rgba(193,123,138,0.3));
   transition: filter 0.3s ease, opacity 0.3s ease;
   opacity: 0.9;
 }
 
 .footer-logo-img:hover {
-  filter: brightness(0) invert(1) drop-shadow(0 4px 20px rgba(201,169,110,0.6));
+  filter: brightness(0) invert(1) drop-shadow(0 4px 20px rgba(193,123,138,0.6));
   opacity: 1;
 }
 
