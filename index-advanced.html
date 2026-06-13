@@ -3,373 +3,709 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ministry of Beauty - Formazione Professionale di Trucco in Sardegna</title>
+    <title>Ministry of Beauty — Formazione Professionale di Trucco in Sardegna dal 2008</title>
+    <meta name="description" content="Agenzia formativa accreditata in Sardegna. Corsi professionali di makeup, consulenza d'immagine e social media marketing a Cagliari dal 2008.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<!-- HEADER & NAVIGATION -->
-<header class="navbar">
-    <div class="container navbar-container">
-        <div class="logo">
-            <span class="logo-icon">✨</span>
-            <span class="logo-text">Ministry of Beauty</span>
-        </div>
-        <nav class="nav-menu">
+<!-- PRELOADER -->
+<div class="preloader" id="preloader">
+    <div class="preloader-inner">
+        <div class="preloader-logo">Ministry of Beauty</div>
+        <div class="preloader-bar"><div class="preloader-fill"></div></div>
+    </div>
+</div>
+
+<!-- CURSOR -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- NAVBAR -->
+<header class="navbar" id="navbar">
+    <div class="nav-inner">
+        <a href="#home" class="nav-logo">
+            <span class="logo-ministry">Ministry</span>
+            <span class="logo-of">of</span>
+            <span class="logo-beauty">Beauty</span>
+        </a>
+
+        <nav class="nav-menu" id="navMenu">
             <a href="#home" class="nav-link">Home</a>
-            <a href="#corsi" class="nav-link">Corsi</a>
+            <div class="nav-dropdown">
+                <a href="#corsi" class="nav-link">Corsi <span class="arrow">›</span></a>
+                <div class="dropdown-panel">
+                    <a href="#corsi">Bridal Makeup Intensive</a>
+                    <a href="#corsi">Masterclass Makeup Artist</a>
+                    <a href="#corsi">Consulenza d'Immagine</a>
+                    <a href="#corsi">Social Media Marketing</a>
+                    <a href="#corsi">Corso 600 Ore</a>
+                    <a href="#corsi">The Beauty Event</a>
+                </div>
+            </div>
             <a href="#chi-siamo" class="nav-link">Chi Siamo</a>
             <a href="#contatti" class="nav-link">Contatti</a>
         </nav>
-        <button class="mobile-menu-btn">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
+
+        <div class="nav-right">
+            <a href="tel:+393408248720" class="nav-phone">+39 340 824 8720</a>
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
     </div>
 </header>
 
-<!-- HERO SECTION -->
+<!-- MOBILE DRAWER -->
+<div class="mobile-drawer" id="mobileDrawer">
+    <button class="drawer-close" id="drawerClose">✕</button>
+    <nav class="drawer-nav">
+        <a href="#home" class="drawer-link">Home</a>
+        <a href="#corsi" class="drawer-link">Corsi</a>
+        <a href="#chi-siamo" class="drawer-link">Chi Siamo</a>
+        <a href="#contatti" class="drawer-link">Contatti</a>
+    </nav>
+    <div class="drawer-contact">
+        <p>+39 340 824 8720</p>
+        <p>Quartu Sant'Elena, Sardegna</p>
+    </div>
+</div>
+<div class="drawer-overlay" id="drawerOverlay"></div>
+
+<!-- ===== HERO SECTION ===== -->
 <section class="hero" id="home">
-    <div class="hero-background">
-        <div class="animated-shape shape-1"></div>
-        <div class="animated-shape shape-2"></div>
-        <div class="animated-shape shape-3"></div>
-    </div>
+    <div class="hero-bg-grid"></div>
+    <div class="hero-particles" id="heroParticles"></div>
 
-    <div class="container hero-content">
-        <div class="hero-text">
-            <h1 class="hero-title">
-                <span class="word">Dove</span>
-                <span class="word">Arte,</span>
-                <span class="word">Bellezza</span>
-                <span class="word">e</span>
-                <span class="word">Formazione</span>
-                <span class="word">Diventano</span>
-                <span class="word">Professione</span>
-            </h1>
-            <p class="hero-subtitle">Formazione Professionale dal 2008 - Agenzia Formativa Accreditata</p>
-            <p class="hero-description">Scopri percorsi di formazione che anticipano il mercato, unendo tradizione artigianale e innovazione tecnologica.</p>
-            <div class="hero-buttons">
-                <button class="btn btn-primary btn-pulse">Scopri i Corsi</button>
-                <button class="btn btn-secondary">Contattaci</button>
-            </div>
+    <div class="hero-content">
+        <div class="hero-eyebrow">
+            <span class="eyebrow-line"></span>
+            <span>Formazione Professionale dal 2008</span>
+            <span class="eyebrow-line"></span>
         </div>
 
-        <div class="hero-image">
-            <div class="image-card">
-                <div class="image-placeholder">
-                    <span class="emoji">💄</span>
-                </div>
-            </div>
-            <div class="floating-card card-1">Esperienza 16+ Anni</div>
-            <div class="floating-card card-2">100% Garantito</div>
-            <div class="floating-card card-3">Miglior Trainer</div>
+        <h1 class="hero-title">
+            <span class="title-line line-1">Dove Arte,</span>
+            <span class="title-line line-2"><em>Bellezza</em></span>
+            <span class="title-line line-3">e Formazione</span>
+            <span class="title-line line-4">Diventano</span>
+            <span class="title-line line-5"><em>Professione</em></span>
+        </h1>
+
+        <p class="hero-sub">
+            Agenzia Formativa Accreditata — Regione Autonoma della Sardegna
+        </p>
+
+        <div class="hero-cta">
+            <a href="#corsi" class="btn-gold">
+                <span>Esplora i Corsi</span>
+                <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#contatti" class="btn-outline">Contattaci</a>
+        </div>
+
+        <div class="hero-badges">
+            <div class="badge"><span class="badge-num">16+</span><span class="badge-text">Anni di<br>Esperienza</span></div>
+            <div class="badge-divider"></div>
+            <div class="badge"><span class="badge-num">1000+</span><span class="badge-text">Professionisti<br>Formati</span></div>
+            <div class="badge-divider"></div>
+            <div class="badge"><span class="badge-num">100%</span><span class="badge-text">Apprendimento<br>Garantito</span></div>
+            <div class="badge-divider"></div>
+            <div class="badge"><span class="badge-num">5★</span><span class="badge-text">Migliori<br>Trainers</span></div>
         </div>
     </div>
 
-    <div class="scroll-indicator">
+    <div class="hero-visual">
+        <div class="hero-card-main">
+            <div class="card-glow"></div>
+            <div class="card-emoji">💄</div>
+            <p class="card-label">Makeup Professionale</p>
+        </div>
+        <div class="hero-card-float float-a">✨ Accreditato</div>
+        <div class="hero-card-float float-b">🏆 N.1 in Sardegna</div>
+        <div class="hero-card-float float-c">🎓 Certificato EU</div>
+    </div>
+
+    <div class="hero-scroll-hint">
+        <div class="scroll-line"></div>
         <span>Scorri</span>
-        <div class="scroll-arrow">
-            <span></span>
-            <span></span>
-        </div>
     </div>
 </section>
 
-<!-- STATS SECTION -->
-<section class="stats">
-    <div class="container">
-        <div class="stats-grid">
-            <div class="stat-item stat-1">
-                <div class="stat-number">16+</div>
-                <div class="stat-label">Anni di Esperienza</div>
-            </div>
-            <div class="stat-item stat-2">
-                <div class="stat-number">1000+</div>
-                <div class="stat-label">Professionisti Formati</div>
-            </div>
-            <div class="stat-item stat-3">
-                <div class="stat-number">100%</div>
-                <div class="stat-label">Apprendimento Garantito</div>
-            </div>
-            <div class="stat-item stat-4">
-                <div class="stat-number">5⭐</div>
-                <div class="stat-label">Valutazione Media</div>
-            </div>
-        </div>
+<!-- ===== MARQUEE STRIP ===== -->
+<div class="marquee-strip">
+    <div class="marquee-track">
+        <span>Bridal Makeup</span><span class="sep">✦</span>
+        <span>Makeup Artist</span><span class="sep">✦</span>
+        <span>Consulenza d'Immagine</span><span class="sep">✦</span>
+        <span>Social Media Marketing</span><span class="sep">✦</span>
+        <span>The Beauty Event</span><span class="sep">✦</span>
+        <span>Formazione Professionale</span><span class="sep">✦</span>
+        <span>Accreditato Regione Sardegna</span><span class="sep">✦</span>
+        <span>Bridal Makeup</span><span class="sep">✦</span>
+        <span>Makeup Artist</span><span class="sep">✦</span>
+        <span>Consulenza d'Immagine</span><span class="sep">✦</span>
+        <span>Social Media Marketing</span><span class="sep">✦</span>
+        <span>The Beauty Event</span><span class="sep">✦</span>
+        <span>Formazione Professionale</span><span class="sep">✦</span>
+        <span>Accreditato Regione Sardegna</span><span class="sep">✦</span>
     </div>
-</section>
+</div>
 
-<!-- FEATURES SECTION -->
-<section class="features">
-    <div class="container">
-        <h2 class="section-title">Perché Scegliere Ministry of Beauty</h2>
+<!-- ===== FEATURES SECTION ===== -->
+<section class="features-section" id="features">
+    <div class="section-container">
+        <div class="section-label">Perché Sceglierci</div>
+        <h2 class="section-title">La Nostra <em>Differenza</em></h2>
+
         <div class="features-grid">
-            <div class="feature-card feature-1">
-                <div class="feature-icon">🏆</div>
-                <h3>Corsi Professionali</h3>
-                <p>Impara dai migliori docenti con certificazione riconosciuta a livello europeo.</p>
-                <span class="feature-label">N.1 Professional Courses</span>
+            <div class="feat-card reveal">
+                <div class="feat-icon">🏆</div>
+                <h3>N.1 Corsi Professionali</h3>
+                <p>Impara dai migliori docenti con certificazione riconosciuta a livello europeo e regionale.</p>
+                <div class="feat-tag">Accreditato</div>
             </div>
-
-            <div class="feature-card feature-2">
-                <div class="feature-icon">✓</div>
+            <div class="feat-card reveal">
+                <div class="feat-icon">✓</div>
                 <h3>100% Apprendimento Garantito</h3>
-                <p>Certificazione riconosciuta con garanzia di competenze acquisite.</p>
-                <span class="feature-label">Certificato Garantito</span>
+                <p>Ogni percorso è progettato per garantire l'acquisizione completa delle competenze professionali.</p>
+                <div class="feat-tag">Garantito</div>
             </div>
-
-            <div class="feature-card feature-3">
-                <div class="feature-icon">🔄</div>
+            <div class="feat-card reveal">
+                <div class="feat-icon">🔄</div>
                 <h3>Aggiornamento Continuo</h3>
-                <p>I nostri percorsi anticipano le esigenze del mercato contemporaneo.</p>
-                <span class="feature-label">Formazione Innovativa</span>
+                <p>Anticipiamo le esigenze del mercato unendo tradizione artigianale e innovazione tecnologica.</p>
+                <div class="feat-tag">Innovativo</div>
             </div>
-
-            <div class="feature-card feature-4">
-                <div class="feature-icon">⭐</div>
-                <h3>Migliori Trainers</h3>
-                <p>Docenti certificati con esperienza internazionale e 5 stelle di valutazione.</p>
-                <span class="feature-label">5 Stelle</span>
+            <div class="feat-card reveal">
+                <div class="feat-icon">⭐</div>
+                <h3>Migliori Trainers 5 Stelle</h3>
+                <p>Docenti con esperienza internazionale, valutati costantemente dai nostri studenti con 5 stelle.</p>
+                <div class="feat-tag">Elite</div>
             </div>
-
-            <div class="feature-card feature-5">
-                <div class="feature-icon">💳</div>
+            <div class="feat-card reveal">
+                <div class="feat-icon">💳</div>
                 <h3>Pagamenti a Rate</h3>
-                <p>Scegli il tuo percorso e paga comodamente a rate secondo il tuo budget.</p>
-                <span class="feature-label">Flessibile</span>
+                <p>Scegli il percorso che desideri e paga comodamente a rate, senza stress economico.</p>
+                <div class="feat-tag">Flessibile</div>
             </div>
-
-            <div class="feature-card feature-6">
-                <div class="feature-icon">🎓</div>
-                <h3>Esperienza e Affidabilità</h3>
-                <p>Specializzati da 16 anni nella bellezza, immagine e nuove tecnologie.</p>
-                <span class="feature-label">Affidabili dal 2008</span>
+            <div class="feat-card reveal">
+                <div class="feat-icon">🎓</div>
+                <h3>Esperienza dal 2008</h3>
+                <p>16 anni di eccellenza nella formazione di bellezza, immagine e nuove tecnologie in Sardegna.</p>
+                <div class="feat-tag">Dal 2008</div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- COURSES SECTION -->
-<section class="courses" id="corsi">
-    <div class="container">
-        <h2 class="section-title">Corsi Professionali</h2>
-        <p class="section-subtitle">Impara dai migliori docenti</p>
+<!-- ===== STATS SECTION ===== -->
+<section class="stats-section">
+    <div class="stats-bg-text">BEAUTY</div>
+    <div class="section-container">
+        <div class="stats-grid">
+            <div class="stat-block reveal">
+                <div class="stat-icon">🏛️</div>
+                <div class="stat-value" data-target="16">0</div>
+                <div class="stat-suffix">+ Anni</div>
+                <div class="stat-desc">di Esperienza</div>
+            </div>
+            <div class="stat-block reveal">
+                <div class="stat-icon">👩‍🎓</div>
+                <div class="stat-value" data-target="1000">0</div>
+                <div class="stat-suffix">+</div>
+                <div class="stat-desc">Professionisti Formati</div>
+            </div>
+            <div class="stat-block reveal">
+                <div class="stat-icon">📜</div>
+                <div class="stat-value" data-target="100">0</div>
+                <div class="stat-suffix">%</div>
+                <div class="stat-desc">Certificati Riconosciuti</div>
+            </div>
+            <div class="stat-block reveal">
+                <div class="stat-icon">⭐</div>
+                <div class="stat-value" data-target="6">0</div>
+                <div class="stat-suffix"> Corsi</div>
+                <div class="stat-desc">Professionali Attivi</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== COURSES SECTION ===== -->
+<section class="courses-section" id="corsi">
+    <div class="section-container">
+        <div class="section-label">I Nostri Percorsi</div>
+        <h2 class="section-title">Corsi <em>Professionali</em></h2>
+        <p class="section-subtitle">Impara dai migliori docenti con certificazione riconosciuta</p>
 
         <div class="courses-grid">
-            <div class="course-card course-1">
-                <div class="course-image">👰</div>
-                <div class="course-content">
+
+            <!-- COURSE 1 -->
+            <div class="course-card reveal">
+                <div class="course-badge">Intensivo</div>
+                <div class="course-visual">
+                    <div class="course-emoji">👰</div>
+                    <div class="course-overlay">
+                        <a href="#contatti" class="course-cta">Scopri di più</a>
+                        <a href="#" class="course-ig">📷 Instagram</a>
+                    </div>
+                </div>
+                <div class="course-body">
+                    <div class="course-meta">
+                        <span class="course-tag">Bridal</span>
+                        <span class="course-dot">•</span>
+                        <span class="course-tag">Intensivo</span>
+                    </div>
                     <h3>Corso Bridal Makeup Intensive</h3>
-                    <p>Magda Pintus</p>
-                    <div class="course-footer">
-                        <a href="#" class="link-btn">Scopri di più →</a>
-                        <a href="#" class="instagram-btn">Vedi Instagram</a>
+                    <p>Specializzazione nel trucco sposa con la maestra <strong>Magda Pintus</strong>. Tecniche avanzate per il giorno più importante.</p>
+                    <div class="course-instructor">
+                        <div class="instructor-avatar">M</div>
+                        <div>
+                            <strong>Magda Pintus</strong>
+                            <span>Docente Specializzata</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="course-card course-2">
-                <div class="course-image">✨</div>
-                <div class="course-content">
+            <!-- COURSE 2 -->
+            <div class="course-card reveal">
+                <div class="course-badge">Masterclass</div>
+                <div class="course-visual">
+                    <div class="course-emoji">✨</div>
+                    <div class="course-overlay">
+                        <a href="#contatti" class="course-cta">Scopri di più</a>
+                        <a href="#" class="course-ig">📷 Instagram</a>
+                    </div>
+                </div>
+                <div class="course-body">
+                    <div class="course-meta">
+                        <span class="course-tag">Avanzato</span>
+                        <span class="course-dot">•</span>
+                        <span class="course-tag">Masterclass</span>
+                    </div>
                     <h3>Masterclass Makeup Artist</h3>
-                    <p>Manuele Mameli</p>
-                    <div class="course-footer">
-                        <a href="#" class="link-btn">Scopri di più →</a>
-                        <a href="#" class="instagram-btn">Vedi Instagram</a>
+                    <p>Percorso avanzato con <strong>Manuele Mameli</strong>. Tecniche professionali per diventare makeup artist certificato.</p>
+                    <div class="course-instructor">
+                        <div class="instructor-avatar">M</div>
+                        <div>
+                            <strong>Manuele Mameli</strong>
+                            <span>Makeup Artist Professionista</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="course-card course-3">
-                <div class="course-image">👗</div>
-                <div class="course-content">
+            <!-- COURSE 3 -->
+            <div class="course-card reveal">
+                <div class="course-badge">Professionale</div>
+                <div class="course-visual">
+                    <div class="course-emoji">👗</div>
+                    <div class="course-overlay">
+                        <a href="#contatti" class="course-cta">Scopri di più</a>
+                        <a href="#" class="course-ig">📷 Instagram</a>
+                    </div>
+                </div>
+                <div class="course-body">
+                    <div class="course-meta">
+                        <span class="course-tag">Immagine</span>
+                        <span class="course-dot">•</span>
+                        <span class="course-tag">Stile</span>
+                    </div>
                     <h3>Corso di Consulenza d'Immagine</h3>
-                    <p>Specializzazione Completa</p>
-                    <div class="course-footer">
-                        <a href="#" class="link-btn">Scopri di più →</a>
-                        <a href="#" class="instagram-btn">Vedi Instagram</a>
+                    <p>Diventa consulente di immagine professionale. Stile, colori e armonia per una consulenza di qualità nel settore moda.</p>
+                    <div class="course-instructor">
+                        <div class="instructor-avatar">I</div>
+                        <div>
+                            <strong>Docente Specializzato</strong>
+                            <span>Image Consultant</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="course-card course-4">
-                <div class="course-image">📱</div>
-                <div class="course-content">
+            <!-- COURSE 4 -->
+            <div class="course-card reveal">
+                <div class="course-badge">Digitale</div>
+                <div class="course-visual">
+                    <div class="course-emoji">📱</div>
+                    <div class="course-overlay">
+                        <a href="#contatti" class="course-cta">Scopri di più</a>
+                        <a href="#" class="course-ig">📷 Instagram</a>
+                    </div>
+                </div>
+                <div class="course-body">
+                    <div class="course-meta">
+                        <span class="course-tag">Marketing</span>
+                        <span class="course-dot">•</span>
+                        <span class="course-tag">Digitale</span>
+                    </div>
                     <h3>Corso Professionale di Social Media Marketing</h3>
-                    <p>Marketing Digitale</p>
-                    <div class="course-footer">
-                        <a href="#" class="link-btn">Scopri di più →</a>
-                        <a href="#" class="instagram-btn">Vedi Instagram</a>
+                    <p>Strategie digitali per makeup artist e professionisti. Costruisci la tua identità online e moltiplica i clienti.</p>
+                    <div class="course-instructor">
+                        <div class="instructor-avatar">S</div>
+                        <div>
+                            <strong>Social Media Expert</strong>
+                            <span>Marketing Specialist</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="course-card course-5">
-                <div class="course-image">🌟</div>
-                <div class="course-content">
+            <!-- COURSE 5 -->
+            <div class="course-card reveal course-featured">
+                <div class="course-badge featured-badge">Flagship • 600 Ore</div>
+                <div class="course-visual">
+                    <div class="course-emoji">🌟</div>
+                    <div class="course-overlay">
+                        <a href="#contatti" class="course-cta">Scopri di più</a>
+                        <a href="#" class="course-ig">📷 Instagram</a>
+                    </div>
+                </div>
+                <div class="course-body">
+                    <div class="course-meta">
+                        <span class="course-tag">Accreditato</span>
+                        <span class="course-dot">•</span>
+                        <span class="course-tag">Regionale</span>
+                    </div>
                     <h3>Corso Regionale Makeup Artist 600 Ore</h3>
-                    <p>Accreditato Regionale</p>
-                    <div class="course-footer">
-                        <a href="#" class="link-btn">Scopri di più →</a>
-                        <a href="#" class="instagram-btn">Vedi Instagram</a>
+                    <p>Il percorso completo accreditato dalla Regione Sardegna. 600 ore di formazione con qualifica europea riconosciuta.</p>
+                    <div class="course-instructor">
+                        <div class="instructor-avatar">★</div>
+                        <div>
+                            <strong>Corpo Docente Completo</strong>
+                            <span>Percorso Accreditato EU</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="course-card course-6">
-                <div class="course-image">🎪</div>
-                <div class="course-content">
+            <!-- COURSE 6 -->
+            <div class="course-card reveal">
+                <div class="course-badge">Evento</div>
+                <div class="course-visual">
+                    <div class="course-emoji">🎪</div>
+                    <div class="course-overlay">
+                        <a href="#contatti" class="course-cta">Scopri di più</a>
+                        <a href="#" class="course-ig">📷 Instagram</a>
+                    </div>
+                </div>
+                <div class="course-body">
+                    <div class="course-meta">
+                        <span class="course-tag">Evento</span>
+                        <span class="course-dot">•</span>
+                        <span class="course-tag">Speciale</span>
+                    </div>
                     <h3>The Beauty Event</h3>
-                    <p>Evento Speciale</p>
-                    <div class="course-footer">
-                        <a href="#" class="link-btn">Scopri di più →</a>
-                        <a href="#" class="instagram-btn">Vedi Instagram</a>
+                    <p>Un'esperienza immersiva esclusiva nel mondo della bellezza. Masterclass speciali, networking e showcase professionale.</p>
+                    <div class="course-instructor">
+                        <div class="instructor-avatar">E</div>
+                        <div>
+                            <strong>Multi-Docente</strong>
+                            <span>Esperienza Immersiva</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ===== ABOUT / MISSION SECTION ===== -->
+<section class="about-section" id="chi-siamo">
+    <div class="about-left reveal">
+        <div class="about-visual-wrap">
+            <div class="about-card-main">
+                <div class="about-emoji">🎨</div>
+                <div class="about-card-text">
+                    <strong>Accreditata</strong>
+                    <span>Regione Autonoma della Sardegna</span>
+                </div>
+            </div>
+            <div class="about-card-accent accent-a">
+                <span>✦</span> Formazione dal 2008
+            </div>
+            <div class="about-card-accent accent-b">
+                <span>🇪🇺</span> Standard Europei
+            </div>
+            <div class="about-ring about-ring-1"></div>
+            <div class="about-ring about-ring-2"></div>
+        </div>
+    </div>
+
+    <div class="about-right reveal">
+        <div class="section-label">Chi Siamo</div>
+        <h2 class="section-title">Formazione che<br><em>Anticipa il Mercato</em></h2>
+        <p class="about-text">I nostri percorsi nascono da un'esigenza reale del mercato: formare figure professionali pronte per il mondo del lavoro di oggi, capaci di unire competenza tecnica, visione estetica e identità personale.</p>
+
+        <blockquote class="about-quote">
+            "Dove arte, bellezza e formazione diventano metodo, professione e futuro."
+        </blockquote>
+
+        <p class="about-text">Ministry of Beauty crea percorsi di formazione professionale per makeup artist, parrucchieri e consulenti di immagine a Cagliari che anticipano le esigenze del mercato contemporaneo, unendo tradizione artigianale e innovazione tecnologica.</p>
+
+        <div class="about-pills">
+            <span class="pill">Tradizione Artigianale</span>
+            <span class="pill">Innovazione Tecnologica</span>
+            <span class="pill">Standard Europei</span>
+            <span class="pill">Cagliari, Sardegna</span>
+        </div>
+
+        <a href="#contatti" class="btn-gold">Scopri di Più
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+    </div>
+</section>
+
+<!-- ===== TESTIMONIALS SECTION ===== -->
+<section class="testimonials-section">
+    <div class="section-container">
+        <div class="section-label">Cosa Dicono</div>
+        <h2 class="section-title">Le Nostre <em>Studentesse</em></h2>
+
+        <div class="testimonials-track" id="testimonialsTrack">
+            <div class="testi-card">
+                <div class="testi-stars">★★★★★</div>
+                <p class="testi-text">"La formazione ricevuta è stata eccezionale. Docenti preparati e metodologia innovativa mi hanno permesso di avviare la mia attività di makeup artist in pochissimo tempo. Lo consiglio a tutte!"</p>
+                <div class="testi-author">
+                    <div class="testi-avatar">MR</div>
+                    <div>
+                        <strong>Maria Rossi</strong>
+                        <span>Makeup Artist — Cagliari</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testi-card">
+                <div class="testi-stars">★★★★★</div>
+                <p class="testi-text">"Professionalità, dedizione e competenza. Ministry of Beauty mi ha fornito tutte le competenze necessarie per lavorare nel settore della consulenza d'immagine. Sono davvero grata."</p>
+                <div class="testi-author">
+                    <div class="testi-avatar">LD</div>
+                    <div>
+                        <strong>Laura Desogus</strong>
+                        <span>Consulente d'Immagine — Sardegna</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testi-card">
+                <div class="testi-stars">★★★★★</div>
+                <p class="testi-text">"Il corso di Social Media Marketing mi ha trasformato completamente. Ora gestisco il mio profilo con strategia e ho triplicato i clienti in soli due mesi dall'inizio del corso."</p>
+                <div class="testi-author">
+                    <div class="testi-avatar">SP</div>
+                    <div>
+                        <strong>Sara Pinna</strong>
+                        <span>Social Media Manager — Quartu</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testi-card">
+                <div class="testi-stars">★★★★★</div>
+                <p class="testi-text">"Ho completato il corso da 600 ore e ho ricevuto un'educazione completa, pratica e riconosciuta. Oggi lavoro come makeup artist professionista e devo tutto a Ministry of Beauty."</p>
+                <div class="testi-author">
+                    <div class="testi-avatar">AC</div>
+                    <div>
+                        <strong>Anna Carta</strong>
+                        <span>Makeup Artist Professionista</span>
                     </div>
                 </div>
             </div>
         </div>
+
+        <div class="testi-controls">
+            <button class="testi-btn" id="testiPrev">‹</button>
+            <div class="testi-dots" id="testiDots"></div>
+            <button class="testi-btn" id="testiNext">›</button>
+        </div>
     </div>
 </section>
 
-<!-- ABOUT SECTION -->
-<section class="about" id="chi-siamo">
-    <div class="container about-container">
-        <div class="about-content">
-            <h2 class="section-title">Formazione che Anticipa il Mercato</h2>
-            <p class="about-text">I nostri percorsi nascono da un'esigenza reale del mercato: formare figure professionali pronte per il mondo del lavoro di oggi, capaci di unire competenza tecnica, visione estetica e identità.</p>
-            <p class="about-tagline">"Dove arte, bellezza e formazione diventano metodo, professione e futuro."</p>
-
-            <p class="about-description">Ministry of Beauty crea percorsi di formazione professionale per makeup artist, parrucchieri e consulenti di immagine a Cagliari che anticipano le esigenze del mercato contemporaneo, unendo tradizione artigianale e innovazione tecnologica.</p>
-
-            <button class="btn btn-primary btn-lg">Scopri di Più</button>
-        </div>
-
-        <div class="about-visual">
-            <div class="visual-card">
-                <span class="visual-emoji">🎨</span>
+<!-- ===== CTA BANNER ===== -->
+<section class="cta-banner">
+    <div class="cta-bg-decor decor-1">✦</div>
+    <div class="cta-bg-decor decor-2">◈</div>
+    <div class="cta-bg-decor decor-3">✦</div>
+    <div class="section-container">
+        <div class="cta-content reveal">
+            <span class="cta-eyebrow">Inizia Oggi</span>
+            <h2>Pronta a Trasformare la Tua<br><em>Passione in Professione?</em></h2>
+            <p>Scopri come i nostri corsi accreditati possono cambiarti la vita e aprire nuove porte nel mondo della bellezza professionale.</p>
+            <div class="cta-actions">
+                <a href="#contatti" class="btn-gold">Prenota una Consulenza
+                    <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <a href="tel:+393408248720" class="btn-outline">Chiama Ora</a>
             </div>
-            <div class="visual-dots"></div>
         </div>
     </div>
 </section>
 
-<!-- CTA SECTION -->
-<section class="cta-section">
-    <div class="container">
-        <h2>Pronto a Trasformare la Tua Passione in Professione?</h2>
-        <p>Scopri come i nostri corsi possono cambiarti la vita</p>
-        <button class="btn btn-light btn-xl">Contattaci Ora</button>
-    </div>
-</section>
-
-<!-- CONTACT SECTION -->
-<section class="contact" id="contatti">
-    <div class="container">
-        <h2 class="section-title">Contattaci</h2>
+<!-- ===== CONTACT SECTION ===== -->
+<section class="contact-section" id="contatti">
+    <div class="section-container">
+        <div class="section-label">Contattaci</div>
+        <h2 class="section-title">Parliamo del<br><em>Tuo Futuro</em></h2>
 
         <div class="contact-grid">
-            <div class="contact-info">
-                <h3>Informazioni di Contatto</h3>
-
-                <div class="info-item">
+            <div class="contact-info reveal">
+                <div class="info-card">
                     <span class="info-icon">📍</span>
                     <div>
-                        <strong>Indirizzo</strong>
-                        <p>Gavino Pes, Quartu Sant'Elena<br>09045, Italia</p>
+                        <strong>Sede</strong>
+                        <p>Gavino Pes, Quartu Sant'Elena<br>09045 — Sardegna, Italia</p>
                     </div>
                 </div>
-
-                <div class="info-item">
+                <div class="info-card">
                     <span class="info-icon">📞</span>
                     <div>
                         <strong>Telefono</strong>
                         <p><a href="tel:+393408248720">+39 340 824 8720</a></p>
                     </div>
                 </div>
-
-                <div class="info-item">
+                <div class="info-card">
                     <span class="info-icon">✉️</span>
                     <div>
                         <strong>Email</strong>
                         <p><a href="mailto:info@ministryofbeauty.it">info@ministryofbeauty.it</a></p>
                     </div>
                 </div>
+                <div class="info-card">
+                    <span class="info-icon">⏰</span>
+                    <div>
+                        <strong>Orari</strong>
+                        <p>Lun – Ven: 09:00 – 18:00<br>Sab: Su appuntamento</p>
+                    </div>
+                </div>
 
-                <div class="social-links">
-                    <a href="#" class="social-icon">📷 Instagram</a>
-                    <a href="#" class="social-icon">f Facebook</a>
+                <div class="social-row">
+                    <a href="#" class="social-pill">📷 Instagram</a>
+                    <a href="#" class="social-pill">f Facebook</a>
+                    <a href="#" class="social-pill">TikTok</a>
                 </div>
             </div>
 
-            <form class="contact-form" id="contactForm">
-                <div class="form-group">
-                    <input type="text" placeholder="Nome e Cognome" required>
+            <form class="contact-form reveal" id="contactForm" novalidate>
+                <div class="form-success" id="formSuccess">
+                    <span>✓</span>
+                    <p>Il tuo messaggio è stato inviato con successo!<br>Ti contatteremo al più presto.</p>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="fname">Nome *</label>
+                        <input type="text" id="fname" placeholder="Il tuo nome" required>
+                        <span class="input-error" id="fnameErr">Campo obbligatorio</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="lname">Cognome *</label>
+                        <input type="text" id="lname" placeholder="Il tuo cognome" required>
+                        <span class="input-error" id="lnameErr">Campo obbligatorio</span>
+                    </div>
                 </div>
 
                 <div class="form-group">
-                    <input type="email" placeholder="Email" required>
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" placeholder="La tua email" required>
+                    <span class="input-error" id="emailErr">Email non valida</span>
                 </div>
 
                 <div class="form-group">
-                    <input type="tel" placeholder="Numero di Telefono" required>
+                    <label for="phone">Telefono</label>
+                    <input type="tel" id="phone" placeholder="Il tuo numero">
                 </div>
 
                 <div class="form-group">
-                    <textarea placeholder="Scrivi il tuo messaggio..." rows="5" required></textarea>
+                    <label for="corso">Corso di Interesse</label>
+                    <select id="corso">
+                        <option value="">— Seleziona un corso —</option>
+                        <option>Bridal Makeup Intensive — Magda Pintus</option>
+                        <option>Masterclass Makeup Artist — Manuele Mameli</option>
+                        <option>Consulenza d'Immagine</option>
+                        <option>Social Media Marketing Professionale</option>
+                        <option>Corso Regionale Makeup Artist 600 Ore</option>
+                        <option>The Beauty Event</option>
+                    </select>
                 </div>
 
-                <button type="submit" class="btn btn-primary btn-block">Invia Messaggio</button>
+                <div class="form-group">
+                    <label for="message">Messaggio *</label>
+                    <textarea id="message" rows="5" placeholder="Scrivi il tuo messaggio..." required></textarea>
+                    <span class="input-error" id="messageErr">Campo obbligatorio</span>
+                </div>
+
+                <button type="submit" class="btn-gold btn-full" id="submitBtn">
+                    <span id="btnText">Invia Messaggio</span>
+                    <div class="btn-spinner" id="btnSpinner"></div>
+                    <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
             </form>
         </div>
     </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ===== FOOTER ===== -->
 <footer class="footer">
-    <div class="container">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>Ministry of Beauty</h4>
-                <p>Agenzia Formativa Accreditata Regione Sardegna</p>
+    <div class="footer-top">
+        <div class="section-container">
+            <div class="footer-brand">
+                <div class="footer-logo">Ministry of Beauty</div>
+                <p>Agenzia Formativa Accreditata presso la Regione Autonoma della Sardegna. Formazione professionale nel mondo della bellezza dal 2008.</p>
+                <div class="footer-socials">
+                    <a href="#">📷</a>
+                    <a href="#">f</a>
+                    <a href="#">TT</a>
+                </div>
             </div>
 
-            <div class="footer-section">
-                <h4>Pagine</h4>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#chi-siamo">Chi Siamo</a></li>
-                    <li><a href="#corsi">Corsi</a></li>
-                    <li><a href="#contatti">Contatti</a></li>
-                </ul>
-            </div>
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4>Pagine</h4>
+                    <a href="#home">Home</a>
+                    <a href="#chi-siamo">Chi Siamo</a>
+                    <a href="#corsi">Corsi</a>
+                    <a href="#contatti">Contatti</a>
+                </div>
 
-            <div class="footer-section">
-                <h4>Corsi</h4>
-                <ul>
-                    <li><a href="#">Corso Consulente d'Immagine</a></li>
-                    <li><a href="#">Makeup Artist Professionale</a></li>
-                    <li><a href="#">Social Media Marketing</a></li>
-                    <li><a href="#">The Beauty Event</a></li>
-                </ul>
-            </div>
+                <div class="footer-col">
+                    <h4>Corsi</h4>
+                    <a href="#corsi">Bridal Makeup Intensive</a>
+                    <a href="#corsi">Masterclass Makeup Artist</a>
+                    <a href="#corsi">Consulenza d'Immagine</a>
+                    <a href="#corsi">Social Media Marketing</a>
+                    <a href="#corsi">Corso 600 Ore</a>
+                    <a href="#corsi">The Beauty Event</a>
+                </div>
 
-            <div class="footer-section">
-                <h4>Legal</h4>
-                <ul>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Cookie Policy</a></li>
-                    <li><a href="#">Note Legali</a></li>
-                </ul>
+                <div class="footer-col">
+                    <h4>Legale</h4>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Cookie Policy</a>
+                    <a href="#">Note Legali</a>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Contatti</h4>
+                    <a href="tel:+393408248720">+39 340 824 8720</a>
+                    <a href="mailto:info@ministryofbeauty.it">info@ministryofbeauty.it</a>
+                    <p style="color:#666;font-size:0.85rem;margin-top:0.5rem;">Quartu Sant'Elena, 09045<br>Sardegna, Italia</p>
+                </div>
             </div>
         </div>
+    </div>
 
-        <div class="footer-bottom">
-            <p>&copy; 2024 Ministry of Beauty - Tutti i diritti riservati</p>
+    <div class="footer-bottom">
+        <div class="section-container">
+            <p>&copy; <span id="footerYear"></span> Ministry of Beauty — Tutti i diritti riservati</p>
+            <p>Formazione, esperienza e visione nella bellezza professionale.</p>
         </div>
     </div>
 </footer>
+
+<!-- SCROLL TO TOP -->
+<button class="scroll-top" id="scrollTop" aria-label="Torna su">↑</button>
 
 <script src="script.js"></script>
 </body>
