@@ -282,6 +282,63 @@ img { max-width: 100%; display: block; }
 
 .logo-of { color: var(--gold); font-style: italic; }
 
+/* Logo image — navbar */
+.nav-logo-img {
+  height: 52px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.08));
+}
+
+.navbar.scrolled .nav-logo-img {
+  height: 44px;
+}
+
+.nav-logo:hover .nav-logo-img {
+  opacity: 0.85;
+  transform: scale(1.03);
+}
+
+/* Fallback text logo (shown only if image fails) */
+.nav-logo-fallback {
+  display: none;
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 600;
+  gap: 0.3rem;
+  color: var(--dark);
+  align-items: baseline;
+}
+
+/* Logo image — footer */
+.footer-logo-img {
+  height: 70px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  margin-bottom: 1.2rem;
+  /* invert to white so it shows on dark footer */
+  filter: brightness(0) invert(1) drop-shadow(0 2px 12px rgba(201,169,110,0.3));
+  transition: filter 0.3s ease, opacity 0.3s ease;
+  opacity: 0.9;
+}
+
+.footer-logo-img:hover {
+  filter: brightness(0) invert(1) drop-shadow(0 4px 20px rgba(201,169,110,0.6));
+  opacity: 1;
+}
+
+.footer-logo-fallback {
+  display: none;
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--gold-light);
+  margin-bottom: 1.2rem;
+}
+
 .nav-menu {
   display: flex;
   align-items: center;
@@ -409,8 +466,21 @@ img { max-width: 100%; display: block; }
 
 .mobile-drawer.open { right: 0; }
 
+.drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2.5rem;
+}
+
+.drawer-logo {
+  height: 46px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.08));
+}
+
 .drawer-close {
-  align-self: flex-end;
   background: none;
   border: none;
   font-size: 1.5rem;
