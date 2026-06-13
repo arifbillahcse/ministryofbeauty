@@ -523,6 +523,105 @@
     </div>
 </section>
 
+<!-- ===== VIDEO SHOWREEL SECTION ===== -->
+<section class="video-section" id="showreel">
+    <div class="video-section-inner">
+
+        <!-- Left: Text -->
+        <div class="video-text reveal">
+            <div class="section-label">Il Nostro Mondo</div>
+            <h2 class="section-title">Guarda la<br><em>Nostra Arte</em></h2>
+            <p class="video-desc">Ogni trucco racconta una storia. Scopri il lavoro dei nostri docenti e dei nostri studenti, tra tecnica, creatività e passione per la bellezza professionale.</p>
+            <ul class="video-features">
+                <li><span class="vf-dot"></span>Tecniche professionali avanzate</li>
+                <li><span class="vf-dot"></span>Docenti certificati e riconosciuti</li>
+                <li><span class="vf-dot"></span>Risultati reali dai nostri corsisti</li>
+                <li><span class="vf-dot"></span>Formazione accreditata dal 2008</li>
+            </ul>
+            <a href="#contatti" class="btn-gold">
+                <span>Inizia il Tuo Percorso</span>
+                <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+        </div>
+
+        <!-- Right: Video Player -->
+        <div class="video-player-wrap reveal">
+            <div class="video-frame">
+                <video
+                    id="showreelVideo"
+                    class="showreel-video"
+                    src="IMG_1637-1-1-1.mov"
+                    playsinline
+                    loop
+                    muted
+                    preload="metadata"
+                    poster=""
+                ></video>
+
+                <!-- Play / Pause overlay -->
+                <div class="video-overlay" id="videoOverlay">
+                    <button class="play-btn" id="playBtn" aria-label="Riproduci video">
+                        <svg class="play-icon" id="playIcon" viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+                        <svg class="pause-icon" id="pauseIcon" viewBox="0 0 24 24" style="display:none"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+                    </button>
+                    <div class="video-label-badge">
+                        <span>✦</span> Ministry of Beauty Showreel
+                    </div>
+                </div>
+
+                <!-- Progress bar -->
+                <div class="video-progress-wrap" id="videoProgressWrap">
+                    <div class="video-progress-bar" id="videoProgressBar"></div>
+                    <div class="video-progress-bg"></div>
+                </div>
+
+                <!-- Mute / Unmute -->
+                <button class="mute-btn" id="muteBtn" aria-label="Attiva audio">
+                    <svg class="mute-icon" id="muteIcon" viewBox="0 0 24 24">
+                        <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+                        <line x1="23" y1="9" x2="17" y2="15"/>
+                        <line x1="17" y1="9" x2="23" y2="15"/>
+                    </svg>
+                    <svg class="unmute-icon" id="unmuteIcon" viewBox="0 0 24 24" style="display:none">
+                        <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+                        <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+                    </svg>
+                </button>
+
+                <!-- Fullscreen -->
+                <button class="fullscreen-btn" id="fullscreenBtn" aria-label="Schermo intero">
+                    <svg viewBox="0 0 24 24"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+                </button>
+
+                <!-- Decorative corners -->
+                <div class="corner corner-tl"></div>
+                <div class="corner corner-tr"></div>
+                <div class="corner corner-bl"></div>
+                <div class="corner corner-br"></div>
+            </div>
+
+            <!-- Video stats below player -->
+            <div class="video-stats">
+                <div class="vs-item">
+                    <span class="vs-num">16+</span>
+                    <span class="vs-label">Anni di Arte</span>
+                </div>
+                <div class="vs-divider"></div>
+                <div class="vs-item">
+                    <span class="vs-num">1000+</span>
+                    <span class="vs-label">Artiste Formate</span>
+                </div>
+                <div class="vs-divider"></div>
+                <div class="vs-item">
+                    <span class="vs-num">5★</span>
+                    <span class="vs-label">Valutazione</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- ===== CTA BANNER ===== -->
 <section class="cta-banner">
     <div class="cta-bg-decor decor-1">✦</div>

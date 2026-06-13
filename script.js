@@ -493,6 +493,134 @@ document.addEventListener('keydown', e => {
   if (e.key === 'Escape') closeDrawer();
 });
 
+/* ─── VIDEO SHOWREEL PLAYER ──────────────────────────────── */
+(function initVideoPlayer() {
+  const video          = document.getElementById('showreelVideo');
+  const overlay        = document.getElementById('videoOverlay');
+  const playBtn        = document.getElementById('playBtn');
+  const playIcon       = document.getElementById('playIcon');
+  const pauseIcon      = document.getElementById('pauseIcon');
+  const muteBtn        = document.getElementById('muteBtn');
+  const muteIcon       = document.getElementById('muteIcon');
+  const unmuteIcon     = document.getElementById('unmuteIcon');
+  const fullscreenBtn  = document.getElementById('fullscreenBtn');
+  const progressBar    = document.getElementById('videoProgressBar');
+  const progressWrap   = document.getElementById('videoProgressWrap');
+  const videoFrame     = video?.closest('.video-frame');
+
+  if (!video) return;
+
+  // Autoplay muted when scrolled into view
+  const videoObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        video.play().catch(() => {});
+        overlay.classList.add('playing');
+        playIcon.style.display  = 'none';
+        pauseIcon.style.display = 'block';
+      } else {
+        video.pause();
+        overlay.classList.remove('playing');
+        playIcon.style.display  = 'block';
+        pauseIcon.style.display = 'none';
+      }
+    });
+  }, { threshold: 0.4 });
+
+  videoObserver.observe(video);
+
+  // Play / Pause toggle
+  function togglePlay() {
+    if (video.paused) {
+      video.play();
+      overlay.classList.add('playing');
+      playIcon.style.display  = 'none';
+      pauseIcon.style.display = 'block';
+    } else {
+      video.pause();
+      overlay.classList.remove('playing');
+      playIcon.style.display  = 'block';
+      pauseIcon.style.display = 'none';
+    }
+  }
+
+  playBtn?.addEventListener('click', (e) => { e.stopPropagation(); togglePlay(); });
+  overlay?.addEventListener('click', togglePlay);
+
+  // Mute / Unmute toggle
+  function toggleMute() {
+    video.muted = !video.muted;
+    muteIcon.style.display   = video.muted ? 'block' : 'none';
+    unmuteIcon.style.display = video.muted ? 'none'  : 'block';
+  }
+
+  muteBtn?.addEventListener('click', (e) => { e.stopPropagation(); toggleMute(); });
+
+  // Progress bar update
+  video.addEventListener('timeupdate', () => {
+    if (!video.duration) return;
+    const pct = (video.currentTime / video.duration) * 100;
+    if (progressBar) progressBar.style.width = pct + '%';
+  });
+
+  // Seek on progress bar click
+  progressWrap?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const rect = progressWrap.getBoundingClientRect();
+    const pct  = (e.clientX - rect.left) / rect.width;
+    video.currentTime = pct * video.duration;
+  });
+
+  // Fullscreen toggle
+  fullscreenBtn?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (!document.fullscreenElement) {
+      (videoFrame || video).requestFullscreen?.();
+    } else {
+      document.exitFullscreen?.();
+    }
+  });
+
+  // Keyboard shortcut: Space = play/pause on the section
+  document.addEventListener('keydown', (e) => {
+    if (e.code === 'Space' && document.activeElement.tagName !== 'INPUT') {
+      const rect = video.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        e.preventDefault();
+        togglePlay();
+      }
+    }
+    if (e.code === 'KeyM') toggleMute();
+  });
+
+  // On video end — show overlay again
+  video.addEventListener('ended', () => {
+    overlay.classList.remove('playing');
+    playIcon.style.display  = 'block';
+    pauseIcon.style.display = 'none';
+    if (progressBar) progressBar.style.width = '0%';
+  });
+
+  // Fallback: if video can't load, show styled placeholder
+  video.addEventListener('error', () => {
+    const placeholder = document.createElement('div');
+    placeholder.style.cssText = `
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      background: linear-gradient(135deg, #111, #1a1a1a);
+      color: #C9A96E; text-align: center; gap: 1rem;
+    `;
+    placeholder.innerHTML = `
+      <div style="font-size:3.5rem">🎬</div>
+      <p style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:#fff;font-style:italic;">Ministry of Beauty Showreel</p>
+      <p style="font-size:0.8rem;color:#666;letter-spacing:2px;">VIDEO IN CARICAMENTO</p>
+    `;
+    videoFrame?.appendChild(placeholder);
+    if (overlay) overlay.style.display = 'none';
+  });
+})();
+
 /* ─── INIT LOG ────────────────────────────────────────────── */
 console.log(
   '%c✨ Ministry of Beauty',
