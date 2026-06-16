@@ -331,7 +331,7 @@ contactForm?.addEventListener('submit', async function(e) {
 
   // Success
   console.log('Form submitted:', { fname, lname, email, message });
-  window.location.href = 'thank-you-lead.html';
+  window.location.href = '/thank-you-lead/';
 });
 
 // Live validation: clear error on input
