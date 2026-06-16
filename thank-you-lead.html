@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grazie! — Ministry of Beauty</title>
+<meta name="description" content="La tua richiesta è stata inviata con successo. Ti contatteremo presto con il programma e i prezzi del corso.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  * , *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --gold:        #C17B8A;
+    --gold-light:  #DBA8B3;
+    --gold-dark:   #8A5460;
+    --dark:        #1A0D10;
+    --cream:       #FDF6F7;
+    --white:       #FFFFFF;
+    --font-serif:  'Cormorant Garamond', Georgia, serif;
+    --font-sans:   'DM Sans', system-ui, sans-serif;
+  }
+
+  html { font-size: 16px; }
+
+  body {
+    font-family: var(--font-sans);
+    color: var(--white);
+    min-height: 100vh;
+    background:
+      linear-gradient(rgba(26,13,16,0.72), rgba(26,13,16,0.78)),
+      url('https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+
+  .card {
+    max-width: 540px;
+    width: 100%;
+    text-align: center;
+    background: rgba(26, 13, 16, 0.55);
+    border: 1px solid rgba(219, 168, 179, 0.25);
+    border-radius: 20px;
+    padding: 56px 40px;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    animation: fadeUp 0.7s ease both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .check-circle {
+    width: 84px;
+    height: 84px;
+    margin: 0 auto 28px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+    box-shadow: 0 10px 30px rgba(193,123,138,0.45);
+  }
+
+  h1 {
+    font-family: var(--font-serif);
+    font-weight: 600;
+    font-size: 2.4rem;
+    line-height: 1.25;
+    color: var(--gold-light);
+    margin-bottom: 16px;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--white);
+  }
+
+  p.lead {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 32px;
+  }
+
+  .divider {
+    width: 60px;
+    height: 2px;
+    background: var(--gold);
+    margin: 0 auto 32px;
+    border-radius: 2px;
+  }
+
+  .next-steps {
+    text-align: left;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 14px;
+    padding: 22px 24px;
+    margin-bottom: 36px;
+  }
+
+  .next-steps h2 {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--gold-light);
+    margin-bottom: 14px;
+  }
+
+  .next-steps ul {
+    list-style: none;
+  }
+
+  .next-steps li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 10px;
+  }
+
+  .next-steps li:last-child { margin-bottom: 0; }
+
+  .next-steps li span.num {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--gold);
+    color: var(--white);
+    font-size: 0.75rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .actions {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 15px 28px;
+    border-radius: 60px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    text-decoration: none;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+    color: var(--white);
+    box-shadow: 0 12px 30px rgba(193,123,138,0.35);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 36px rgba(193,123,138,0.5);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--white);
+    border: 1px solid rgba(255,255,255,0.35);
+  }
+
+  .btn-outline:hover {
+    background: rgba(255,255,255,0.08);
+    border-color: rgba(255,255,255,0.6);
+  }
+
+  .socials {
+    margin-top: 32px;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .socials a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: background 0.25s ease, border-color 0.25s ease;
+  }
+
+  .socials a:hover {
+    background: var(--gold);
+    border-color: var(--gold);
+  }
+
+  @media (max-width: 480px) {
+    .card { padding: 40px 24px; }
+    h1 { font-size: 1.9rem; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="check-circle">✓</div>
+
+    <h1>Grazie per la tua <em>Richiesta!</em></h1>
+
+    <p class="lead">
+      Abbiamo ricevuto la tua richiesta di informazioni sul Corso Social Media Manager.
+      Il nostro team ti contatterà a breve con il programma completo e i prezzi.
+    </p>
+
+    <div class="divider"></div>
+
+    <div class="next-steps">
+      <h2>Cosa succede ora</h2>
+      <ul>
+        <li><span class="num">1</span> Riceverai una email di conferma a breve.</li>
+        <li><span class="num">2</span> Un nostro consulente ti contatterà telefonicamente entro 24 ore.</li>
+        <li><span class="num">3</span> Ti invieremo il programma dettagliato e le opzioni di iscrizione.</li>
+      </ul>
+    </div>
+
+    <div class="actions">
+      <a href="index.html" class="btn btn-primary">Torna alla Home</a>
+      <a href="index.html#corsi" class="btn btn-outline">Scopri Altri Corsi</a>
+    </div>
+
+    <div class="socials">
+      <a href="#" aria-label="Instagram">IG</a>
+      <a href="#" aria-label="Facebook">f</a>
+      <a href="#" aria-label="TikTok">TT</a>
+    </div>
+  </div>
+
+</body>
+</html>

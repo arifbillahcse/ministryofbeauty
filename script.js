@@ -330,11 +330,8 @@ contactForm?.addEventListener('submit', async function(e) {
   await new Promise(r => setTimeout(r, 1800));
 
   // Success
-  contactForm.style.display   = 'none';
-  formSuccess.style.display   = 'block';
-  formSuccess.style.animation = 'fade-up 0.5s ease forwards';
-
   console.log('Form submitted:', { fname, lname, email, message });
+  window.location.href = 'thank-you-lead.html';
 });
 
 // Live validation: clear error on input
